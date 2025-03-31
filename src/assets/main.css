@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter.ttf');
+}
+
+@font-face {
+  font-family: 'Ciron';
+  src: url('../assets/fonts/CironClassic-Regular.otf');
+}
+
+body {
+  background: linear-gradient(45deg, #046AEF 0%, #0C9EFF 100%);
+  font-family: "Inter";
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 1rem;
+  font-family: "Ciron";
+  color: white;
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: "Ciron";
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+  font-family: "Ciron";
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 16px;
+  color: #39434C;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #39434C;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+input[type="checkbox"]:checked {
+  background-color: #046AEF;
+  border-color: #046AEF;
+}
