@@ -5,6 +5,7 @@ export const useFormStore = defineStore('formStore', () => {
   const state = reactive({
     name: '',
     purpose: '',
+    preset: '',
     documents: [
       {
         name: 'Client Invoice',
@@ -12,11 +13,22 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelineClientInvoice',
         alias: 'client_invoices',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Due Date', key: 'DueDate', defaultValue: '', selected: false },
           { name: 'Payment Date', key: 'PaymentDate', defaultValue: '', selected: false },
-          { name: 'Expected Payment Date', key: 'ExpectedPaymentDate', defaultValue: '', selected: false },
+          {
+            name: 'Expected Payment Date',
+            key: 'ExpectedPaymentDate',
+            defaultValue: '',
+            selected: false,
+          },
           { name: 'Document Number', key: 'InvoiceNumber', defaultValue: '', selected: false },
           { name: 'Client Name', key: 'CounterPartyName', defaultValue: '', selected: false },
           { name: 'Client Id', key: 'CounterPartyId', defaultValue: '', selected: false },
@@ -24,11 +36,31 @@ export const useFormStore = defineStore('formStore', () => {
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Due Amount', key: 'DueAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, due, paid, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue: '# Possible values : draft, due, paid, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
       {
@@ -37,7 +69,13 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelineClientCreditNote',
         alias: 'client_credit_notes',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Document Number', key: 'CreditNoteNumber', defaultValue: '', selected: false },
           { name: 'Client Name', key: 'CounterPartyName', defaultValue: '', selected: false },
@@ -46,11 +84,31 @@ export const useFormStore = defineStore('formStore', () => {
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Remaining Amount', key: 'RemainingAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, available, used, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue: '# Possible values : draft, available, used, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
       {
@@ -59,11 +117,22 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelineSupplierInvoice',
         alias: 'supplier_invoices',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Due Date', key: 'DueDate', defaultValue: '', selected: false },
           { name: 'Payment Date', key: 'PaymentDate', defaultValue: '', selected: false },
-          { name: 'Expected Payment Date', key: 'ExpectedPaymentDate', defaultValue: '', selected: false },
+          {
+            name: 'Expected Payment Date',
+            key: 'ExpectedPaymentDate',
+            defaultValue: '',
+            selected: false,
+          },
           { name: 'Document Number', key: 'InvoiceNumber', defaultValue: '', selected: false },
           { name: 'Client Name', key: 'CounterPartyName', defaultValue: '', selected: false },
           { name: 'Client Id', key: 'CounterPartyId', defaultValue: '', selected: false },
@@ -71,11 +140,31 @@ export const useFormStore = defineStore('formStore', () => {
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Due Amount', key: 'DueAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, due, paid, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue: '# Possible values : draft, due, paid, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
       {
@@ -84,7 +173,13 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelineSupplierCreditNote',
         alias: 'supplier_credit_notes',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Document Number', key: 'CreditNoteNumber', defaultValue: '', selected: false },
           { name: 'Client Name', key: 'CounterPartyName', defaultValue: '', selected: false },
@@ -93,11 +188,31 @@ export const useFormStore = defineStore('formStore', () => {
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Remaining Amount', key: 'RemainingAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, available, used, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue: '# Possible values : draft, available, used, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
       {
@@ -106,7 +221,13 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelineSalesOrder',
         alias: 'sales_orders',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Due Date', key: 'DueDate', defaultValue: '', selected: false },
           { name: 'Document Number', key: 'SalesOrderNumber', defaultValue: '', selected: false },
@@ -116,11 +237,32 @@ export const useFormStore = defineStore('formStore', () => {
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Remaining Amount', key: 'RemainingAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue:
+              '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
       {
@@ -129,21 +271,53 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelinePurchaseOrder',
         alias: 'purchase_orders',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Due Date', key: 'DueDate', defaultValue: '', selected: false },
-          { name: 'Document Number', key: 'PurchaseOrderNumber', defaultValue: '', selected: false },
+          {
+            name: 'Document Number',
+            key: 'PurchaseOrderNumber',
+            defaultValue: '',
+            selected: false,
+          },
           { name: 'Client Name', key: 'CounterPartyName', defaultValue: '', selected: false },
           { name: 'Client Id', key: 'CounterPartyId', defaultValue: '', selected: false },
           { name: 'Currency', key: 'Currency', defaultValue: '', selected: false },
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Remaining Amount', key: 'RemainingAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue:
+              '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
       {
@@ -152,21 +326,53 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelineClientQuote',
         alias: 'client_quotes',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Due Date', key: 'DueDate', defaultValue: '', selected: false },
-          { name: 'Document Number', key: 'ProformaInvoiceNumber', defaultValue: '', selected: false },
+          {
+            name: 'Document Number',
+            key: 'ProformaInvoiceNumber',
+            defaultValue: '',
+            selected: false,
+          },
           { name: 'Client Name', key: 'CounterPartyName', defaultValue: '', selected: false },
           { name: 'Client Id', key: 'CounterPartyId', defaultValue: '', selected: false },
           { name: 'Currency', key: 'Currency', defaultValue: '', selected: false },
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Remaining Amount', key: 'RemainingAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue:
+              '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
       {
@@ -175,32 +381,95 @@ export const useFormStore = defineStore('formStore', () => {
         pipeline: 'PipelineProformaInvoice',
         alias: 'proforma_invoices',
         fields: [
-          { name: 'RawData Field', key: 'FieldName', defaultValue: 'SelectNestedField("RawData";"your_field_here")', selected: false },
+          {
+            name: 'RawData Field',
+            key: 'FieldName',
+            defaultValue: 'SelectNestedField("RawData";"your_field_here")',
+            selected: false,
+          },
+          { name: 'Condition', key: 'condition', defaultValue: '', selected: false },
           { name: 'Issue Date', key: 'IssueDate', defaultValue: '', selected: false },
           { name: 'Due Date', key: 'DueDate', defaultValue: '', selected: false },
-          { name: 'Document Number', key: 'ProformaInvoiceNumber', defaultValue: '', selected: false },
+          {
+            name: 'Document Number',
+            key: 'ProformaInvoiceNumber',
+            defaultValue: '',
+            selected: false,
+          },
           { name: 'Client Name', key: 'CounterPartyName', defaultValue: '', selected: false },
           { name: 'Client Id', key: 'CounterPartyId', defaultValue: '', selected: false },
           { name: 'Currency', key: 'Currency', defaultValue: '', selected: false },
           { name: 'Total Amount', key: 'TotalAmount', defaultValue: '', selected: false },
           { name: 'Remaining Amount', key: 'RemainingAmount', defaultValue: '', selected: false },
           { name: 'Taxes Amount', key: 'TaxesAmount', defaultValue: '', selected: false },
-          { name: 'Status', key: 'Status', defaultValue: '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted', selected: false },
+          {
+            name: 'Status',
+            key: 'Status',
+            defaultValue:
+              '# Possible values : draft, sent, accepted, refused, expired, partiallyinvoiced, invoiced, cancelled, deleted',
+            selected: false,
+          },
           { name: 'Label', key: 'Label', defaultValue: '', selected: false },
-          { name: 'Availability for TRY', key: 'AvailableForCashflow', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AR', key: 'AvailableForCashCollect', defaultValue: 'If(condition; true; false)', selected: false },
-          { name: 'Availability for AP', key: 'AvailableForAccountsPayable', defaultValue: 'If(condition; true; false)', selected: false },
+          {
+            name: 'Availability for TRY',
+            key: 'AvailableForCashflow',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AR',
+            key: 'AvailableForCashCollect',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
+          {
+            name: 'Availability for AP',
+            key: 'AvailableForAccountsPayable',
+            defaultValue: 'If(condition; true; false)',
+            selected: false,
+          },
         ],
       },
     ],
   })
 
   function $reset() {
-    state.documents.forEach(document => {
-      document.selected = false
-      document.fields.forEach(field => field.selected = false)
+    state.preset = 'No Preset'
+    state.documents.forEach((doc) => {
+      doc.selected = false
+      doc.fields.forEach((field) => (field.selected = false))
     })
   }
 
-  return { state, $reset }
+  function resetFields() {
+    state.documents.forEach((doc) => doc.fields.forEach((field) => (field.selected = false)))
+  }
+
+  function applyPreset() {
+    resetFields()
+
+    switch (state.preset) {
+      case 'Available':
+        state.documents.forEach((doc) => {
+          doc.fields.forEach((field) => {
+            if (field.key.includes('Available')) field.selected = true
+          })
+        })
+        break
+
+      case 'Date Sync Rule':
+        state.documents.forEach((doc) => {
+          doc.fields.forEach((field) => {
+            if (field.key === 'condition') {
+              field.defaultValue = `IsLaterThan(IssueDate; Date("${new Date().toISOString().split('T')[0]}"))`
+              field.selected = true
+            }
+            if (field.key.includes('Available')) field.selected = true
+          })
+        })
+        break
+    }
+  }
+
+  return { state, $reset, applyPreset }
 })

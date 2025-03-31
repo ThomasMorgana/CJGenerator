@@ -10,14 +10,21 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
-  document: Object,
+  document: {
+    type: Object,
+    required: true,
+  },
 })
 </script>
 
 <style scoped>
 .document-card {
   margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #e8ebf3;
+  border-radius: 4px;
+  background: #f9f9fb;
 }
 </style>

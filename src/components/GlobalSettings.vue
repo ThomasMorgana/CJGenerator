@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useFormStore } from '../store'
 
 const { state } = useFormStore()
@@ -23,17 +23,15 @@ const { state } = useFormStore()
 <style scoped>
 input[type='text'] {
   padding: 4px 8px;
-  border: 1px solid #ccc;
-  border-radius: 0.375rem;
+  border: 1px solid #e8ebf3;
+  border-radius: 4px;
   margin-bottom: 0.5rem;
-  width: 50%;
+  width: 80%;
+  transition: border-color 0.2s;
 }
 
 input[type='text']:focus {
-  padding: 4px 8px;
-  border: 1px solid #0A44A0;
-  border-radius: 0.375rem;
-  margin-bottom: 0.5rem;
-  width: 50%;
+  border-color: #0a44a0;
+  box-shadow: 0 0 5px #7eceff;
 }
 </style>
