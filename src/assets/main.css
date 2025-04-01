@@ -9,15 +9,17 @@
 }
 
 body {
-  background: linear-gradient(45deg, #046aef 0%, #0c9eff 100%);
+  background-color: white;
   font-family: 'Inter';
   margin: 0 auto;
 }
 
 h1 {
+  background: linear-gradient(45deg, #046aef 0%, #0c9eff 100%);
   font-size: 1.5rem;
   font-weight: 900;
-  margin: 1rem;
+  margin: 0;
+  padding: 1rem;
   font-family: 'Ciron';
   color: white;
 }
