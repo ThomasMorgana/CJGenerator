@@ -23,15 +23,19 @@ const { state } = useFormStore()
 <style scoped>
 input[type='text'] {
   padding: 4px 8px;
-  border: 1px solid #e8ebf3;
+  border: 1px solid var(--grey);
   border-radius: 4px;
   margin-bottom: 0.5rem;
   width: 80%;
   transition: border-color 0.2s;
 }
 
+input[type='text']:hover {
+  border-color: var(--dark-grey);
+}
+
 input[type='text']:focus {
-  border-color: #0a44a0;
-  box-shadow: 0 0 5px #7eceff;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--secondary);
 }
 </style>

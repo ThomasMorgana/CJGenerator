@@ -23,7 +23,7 @@ defineProps({
 .document-card {
   margin-bottom: 1rem;
   padding: 0.75rem;
-  border: 1px solid #e8ebf3;
+  border: 1px solid var(--grey);
   border-radius: 4px;
   background: #f9f9fb;
 }

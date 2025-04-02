@@ -37,19 +37,20 @@ const selectedDocuments = computed(() => documents.value.filter((doc) => doc.sel
 select {
   padding: 4px 8px;
   font-size: 12px;
-  border: 1px solid #e8ebf3;
+  border: 1px solid var(--grey);
   border-radius: 4px;
   background-color: white;
   cursor: pointer;
   outline: none;
+  transition: border-color 0.2s;
 }
 
 select:hover {
-  border-color: #39434c;
+  border-color: var(--dark-grey);
 }
 
 select:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 5px #7eceff;
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--secondary);
 }
 </style>

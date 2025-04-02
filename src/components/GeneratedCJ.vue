@@ -80,17 +80,18 @@ button {
   align-items: center;
   justify-content: center;
   margin-left: 0.5rem;
-  color: #39434c;
+  color: var(--dark-grey);
   font-size: 12px;
   border-radius: 4px;
   cursor: pointer;
-  border: 1px solid #c7ccd1;
+  border: 1px solid var(--grey);
   width: 4rem;
   height: 2rem;
-  background: #ffffff;
+  background: white;
+  transition: background-color 0.2s;
 }
 
 button:hover {
-  background: var(--grey-90012, #2343611f);
+  background: var(--grey);
 }
 </style>
