@@ -455,7 +455,7 @@ export const useFormStore = defineStore('formStore', () => {
             if (field.key.includes('Available')) field.selected = true
           })
         })
-        break
+        break;
 
       case 'Date Sync Rule':
         state.documents.forEach((doc) => {
@@ -467,7 +467,19 @@ export const useFormStore = defineStore('formStore', () => {
             if (field.key.includes('Available')) field.selected = true
           })
         })
-        break
+        break;
+      
+      case 'Add field to Label':
+        state.documents.forEach((doc) => {
+          doc.fields.forEach((field) => {
+            if (field.name === 'RawData Field') field.selected = true
+            if (field.name === 'Label') {
+              field.defaultValue = `ConcatWithSeparator("-";Label;FieldName)`
+              field.selected = true
+            }
+          })
+        })
+        break;
     }
   }
 

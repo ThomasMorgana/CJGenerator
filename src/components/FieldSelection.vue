@@ -21,7 +21,7 @@ import DocumentCard from './DocumentCard.vue'
 const formStore = useFormStore()
 const { preset, documents } = toRefs(formStore.state)
 
-const presets = ['No Preset', 'Available', 'Date Sync Rule']
+const presets = ['No Preset', 'Available', 'Date Sync Rule', 'Add field to Label']
 
 const selectedDocuments = computed(() => documents.value.filter((doc) => doc.selected))
 </script>
