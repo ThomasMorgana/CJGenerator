@@ -461,7 +461,7 @@ export const useFormStore = defineStore('formStore', () => {
         state.documents.forEach((doc) => {
           doc.fields.forEach((field) => {
             if (field.key === 'condition') {
-              field.defaultValue = `IsLaterThan(IssueDate; Date("${new Date().toISOString().split('T')[0]}"))`
+              field.defaultValue = `IsLaterThan(IssueDate; Date("${new Date().toISOString()}"; "Europe/Paris"))`
               field.selected = true
             }
             if (field.key.includes('Available')) field.selected = true
